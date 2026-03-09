@@ -1,3 +1,4 @@
+import { ClerkProvider } from '@clerk/nextjs';
 import type { Metadata } from "next";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
@@ -27,8 +28,9 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body className="min-h-screen" style={{ background: 'var(--bg-primary)' }}>
+    <ClerkProvider>
+      <html lang={locale}>
+        <body className="min-h-screen" style={{ background: 'var(--bg-primary)' }}>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main className="w-full">
@@ -82,5 +84,6 @@ export default async function RootLayout({
         </NextIntlClientProvider>
       </body>
     </html>
+    </ClerkProvider>
   );
 }

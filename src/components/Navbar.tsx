@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
+import { Show, SignInButton, UserButton } from '@clerk/nextjs';
 import { Search, Bell, Upload, Menu, X, Zap, Trophy, ShoppingBag, Compass, Settings, Link2, LogOut, ChevronDown, Globe } from 'lucide-react';
 
 const NAV_LINKS = [
@@ -122,58 +123,23 @@ export default function Navbar() {
           </Link>
 
           {/* Profile dropdown */}
-          <div className="relative hidden md:block" onMouseLeave={() => setProfileOpen(false)}>
-            <button
-              className="flex items-center gap-2 rounded-xl px-2 py-1.5 transition-colors hover:bg-white/5"
-              onClick={() => setProfileOpen(o => !o)}
-              aria-label="Account menu"
-            >
-              <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=alice&backgroundColor=b6e3f4"
-                alt="Profile"
-                className="avatar w-9 h-9"
+          <div className="relative hidden md:block">
+            <Show when="signed-in">
+              <UserButton 
+                appearance={{
+                  elements: {
+                    userButtonAvatarBox: 'w-9 h-9 border border-white/10 shadow-sm rounded-xl',
+                  }
+                }}
               />
-              <ChevronDown size={14} style={{ color: 'var(--text-secondary)', transform: profileOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
-            </button>
-            {profileOpen && (
-              <div
-                className="absolute right-0 top-full mt-2 w-52 rounded-2xl overflow-hidden z-50"
-                style={{ background: 'rgba(10,10,30,0.97)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 60px rgba(0,0,0,0.5)' }}
-              >
-                {/* User info */}
-                <div className="px-4 py-3 border-b" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="font-semibold text-sm">Alice Chen</div>
-                  <div className="text-xs" style={{ color: 'var(--text-secondary)' }}>@vibe_alice</div>
-                  <div className="mt-1.5 flex gap-1">
-                    <span className="badge badge-purple" style={{ fontSize: '9px' }}>🐙 GitHub</span>
-                    <span className="badge badge-orange" style={{ fontSize: '9px' }}>🤗 HF</span>
-                    <span className="badge badge-green" style={{ fontSize: '9px' }}>▲ Vercel</span>
-                  </div>
-                </div>
-                {/* Menu items */}
-                {[
-                  { href: '/profile/vibe_alice', icon: '👤', label: 'View Profile' },
-                  { href: '/settings/connections', icon: '🔗', label: 'Connected Accounts', badge: '4' },
-                  { href: '/submit', icon: '⬆️', label: 'Submit Project' },
-                ].map(item => (
-                  <Link key={item.href} href={item.href} onClick={() => setProfileOpen(false)}>
-                    <div className="flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors hover:bg-white/5">
-                      <span>{item.icon}</span>
-                      <span style={{ color: 'var(--text-primary)' }}>{item.label}</span>
-                      {item.badge && (
-                        <span className="ml-auto badge badge-purple" style={{ fontSize: '9px' }}>{item.badge}</span>
-                      )}
-                    </div>
-                  </Link>
-                ))}
-                <div className="border-t" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <button className="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors hover:bg-red-500/10">
-                    <LogOut size={13} style={{ color: '#f87171' }} />
-                    <span style={{ color: '#f87171' }}>Sign Out</span>
-                  </button>
-                </div>
-              </div>
-            )}
+            </Show>
+            <Show when="signed-out">
+              <SignInButton mode="modal">
+                <button className="btn-secondary text-sm py-2 px-4 shadow-[0_0_15px_rgba(139,92,246,0.2)] hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all transition-shadow">
+                  Sign In
+                </button>
+              </SignInButton>
+            </Show>
           </div>
 
           {/* Mobile menu toggle */}
