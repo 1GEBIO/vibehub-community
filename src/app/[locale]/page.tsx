@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { ArrowRight, Zap, Star, Users, Bot, TrendingUp, Sparkles, ChevronRight, Upload } from 'lucide-react';
 import { PROJECTS, USERS, STATS, CATEGORIES } from '@/lib/data';
 import ProjectCard from '@/components/ProjectCard';
@@ -14,6 +15,7 @@ const HERO_PHRASES = [
 ];
 
 export default function HomePage() {
+  const t = useTranslations('Home');
   const [phraseIdx, setPhraseIdx] = useState(0);
   const [displayed, setDisplayed] = useState('');
   const [typing, setTyping] = useState(true);
@@ -52,7 +54,7 @@ export default function HomePage() {
       <div className="grid-bg absolute inset-0 pointer-events-none" />
 
       {/* ─── HERO ─────────────────────────────────── */}
-      <section className="relative max-w-[1600px] mx-auto px-8 pt-32 pb-32 text-center">
+      <section className="relative max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-24 xl:px-40 pt-32 pb-32 text-center">
         {/* Announcement pill */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 neon-border text-sm"
           style={{ background: 'rgba(139,92,246,0.08)', color: '#c4b5fd' }}>
@@ -62,7 +64,7 @@ export default function HomePage() {
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6" style={{ fontFamily: 'Space Grotesk' }}>
-          The Creative Market for
+          {t('hero_title_1')}
           <br />
           <span className="gradient-text">
             {displayed}
@@ -72,24 +74,21 @@ export default function HomePage() {
 
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
           style={{ color: 'var(--text-secondary)' }}>
-          Share, discover, and sell projects built{' '}
-          <span style={{ color: 'var(--accent-purple)' }}>100% by AI</span>.
-          Every line of code generated from a prompt.
-          No manual coding. Pure vibe.
+          {t('hero_desc')}
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <Link href="/explore">
             <button className="btn-primary flex items-center gap-2 text-base px-8 py-3">
               <Zap size={18} />
-              Explore Projects
+              {t('explore_btn')}
               <ArrowRight size={16} />
             </button>
           </Link>
           <Link href="/submit">
             <button className="btn-secondary flex items-center gap-2 text-base px-8 py-3">
               <Upload size={16} />
-              Submit Your Vibe
+              {t('submit_btn')}
             </button>
           </Link>
         </div>
@@ -115,7 +114,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── CATEGORIES ───────────────────────────── */}
-      <section className="max-w-[1600px] mx-auto px-8 mb-32">
+      <section className="max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-24 xl:px-40 mb-32">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold section-title">Browse by Vibe</h2>
           <Link href="/explore" className="text-sm text-purple-400 hover:text-purple-300 flex items-center gap-1">
@@ -141,7 +140,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── FEATURED PROJECTS ────────────────────── */}
-      <section className="max-w-[1600px] mx-auto px-8 mb-32">
+      <section className="max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-24 xl:px-40 mb-32">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-xl font-bold section-title flex items-center gap-2">
@@ -160,7 +159,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── TRENDING ─────────────────────────────── */}
-      <section className="max-w-[1600px] mx-auto px-8 mb-32">
+      <section className="max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-24 xl:px-40 mb-32">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold section-title flex items-center gap-2">
             <TrendingUp size={18} className="text-pink-400" />
@@ -176,7 +175,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── AI CURATION EXPLAINER ────────────────── */}
-      <section className="max-w-[1600px] mx-auto px-8 mb-32">
+      <section className="max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-24 xl:px-40 mb-32">
         <div className="glass-card p-8 md:p-12 relative overflow-hidden">
           <div className="orb" style={{ width: '300px', height: '300px', background: 'radial-gradient(circle, #8b5cf6, transparent)', top: '-100px', right: '-100px', opacity: 0.2 }} />
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -230,7 +229,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── TOP CREATORS ─────────────────────────── */}
-      <section className="max-w-[1600px] mx-auto px-8 mb-32">
+      <section className="max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-24 xl:px-40 mb-32">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold section-title flex items-center gap-2">
             <Star size={18} className="text-yellow-400" />
@@ -274,7 +273,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── CTA ──────────────────────────────────── */}
-      <section className="max-w-[1600px] mx-auto px-8 mb-32">
+      <section className="max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-24 xl:px-40 mb-32">
         <div
           className="rounded-2xl p-12 text-center relative overflow-hidden"
           style={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.15), rgba(236,72,153,0.15))', border: '1px solid rgba(139,92,246,0.2)' }}

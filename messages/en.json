@@ -1,0 +1,15 @@
+{
+  "Navbar": {
+    "explore": "Explore",
+    "leaderboard": "Leaderboard",
+    "marketplace": "Marketplace",
+    "submit": "Submit",
+    "search_placeholder": "Search AI-generated projects, prompts, tools..."
+  },
+  "Home": {
+    "hero_title_1": "The Creative Market for",
+    "hero_desc": "Share, discover, and sell projects built 100% by AI. Every line of code generated from a prompt. No manual coding. Pure vibe.",
+    "explore_btn": "Explore Projects",
+    "submit_btn": "Submit Your Vibe"
+  }
+}

@@ -1,7 +1,7 @@
 'use client';
 import { use } from 'react';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { Star, Users, Zap, Calendar, Flame, GitFork, Bot, Award, Link2, Settings, ShieldCheck, ExternalLink } from 'lucide-react';
 import { USERS, PROJECTS } from '@/lib/data';
 import { MOCK_CONNECTED_ACCOUNTS, PLATFORMS } from '@/lib/platforms';

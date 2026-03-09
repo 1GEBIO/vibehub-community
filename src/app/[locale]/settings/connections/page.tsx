@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import {
   Link2, Link2Off, Check, ArrowRight, Download, RefreshCw,
   ShieldCheck, Zap, AlertCircle, ChevronRight, Star, ExternalLink, Settings

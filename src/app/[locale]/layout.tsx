@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 import Navbar from "@/components/Navbar";
-import Link from 'next/link';
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages} from 'next-intl/server';
+import {routing} from '@/i18n/routing';
+import {notFound} from 'next/navigation';
+import {Link} from '@/i18n/routing';
 
 export const metadata: Metadata = {
   title: "VibeHub — AI-Generated Projects Community",
@@ -9,20 +13,29 @@ export const metadata: Metadata = {
   keywords: "vibe coding, AI generated, cursor, copilot, prompt engineering, AI projects, community",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+  const messages = await getMessages();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className="min-h-screen" style={{ background: 'var(--bg-primary)' }}>
-        <Navbar />
-        <main className="w-full">
-          {children}
-        </main>
-        <footer className="border-t mt-32" style={{ borderColor: 'var(--border-color)', background: 'rgba(5,5,16,0.5)' }}>
-          <div className="max-w-[1600px] mx-auto px-8 py-20">
+        <NextIntlClientProvider messages={messages}>
+          <Navbar />
+          <main className="w-full">
+            {children}
+          </main>
+          <footer className="border-t mt-32" style={{ borderColor: 'var(--border-color)', background: 'rgba(5,5,16,0.5)' }}>
+            <div className="max-w-[1600px] mx-auto px-8 py-20">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
               <div>
                 <div className="flex items-center gap-2 mb-4">
@@ -64,8 +77,9 @@ export default function RootLayout({
                 <span>All systems operational · 2,183 projects online</span>
               </div>
             </div>
-          </div>
-        </footer>
+            </div>
+          </footer>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

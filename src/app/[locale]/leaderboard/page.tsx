@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { Trophy, TrendingUp, Star, Zap, Bot, Medal, ChevronRight, ArrowUp } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { PROJECTS, USERS } from '@/lib/data';
 
 const TABS = ['weekly', 'all-time', 'by-category'] as const;

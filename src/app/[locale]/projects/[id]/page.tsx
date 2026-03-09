@@ -1,7 +1,7 @@
 'use client';
 import { use, useState } from 'react';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import {
   Star, GitFork, Eye, Download, Bot, ChevronDown, ChevronRight,
   Copy, Share2, Play, Users, Sparkles, ArrowRight, Check, Code2, Zap, MessageSquare

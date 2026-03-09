@@ -1,0 +1,15 @@
+{
+  "Navbar": {
+    "explore": "发现",
+    "leaderboard": "排行榜",
+    "marketplace": "创意集市",
+    "submit": "发布",
+    "search_placeholder": "搜索 AI 生成项目、提示词、工具..."
+  },
+  "Home": {
+    "hero_title_1": "纯 AI 生成项目的创意集市",
+    "hero_desc": "分享、发现并出售 100% 由 AI 构建的项目。每一行代码都源于提示词的驱动，告别人工编码。纯粹的 Vibe。",
+    "explore_btn": "探索项目",
+    "submit_btn": "发布你的 Vibe"
+  }
+}

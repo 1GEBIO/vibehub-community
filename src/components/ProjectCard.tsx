@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { Star, GitFork, Eye, Zap, Bot, Users } from 'lucide-react';
 import { Project } from '@/lib/data';
 

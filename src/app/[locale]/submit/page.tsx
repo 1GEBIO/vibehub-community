@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { Upload, ChevronRight, Bot, Sparkles, Check, Zap, Plus, X, ArrowRight, Link2, Download, AlertCircle, Star } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { MOCK_IMPORTABLE_REPOS, PLATFORMS } from '@/lib/platforms';
 
 const STEPS = ['Project Info', 'AI Details', 'Prompt Chain', 'Preview & Submit'];

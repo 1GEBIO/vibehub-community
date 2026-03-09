@@ -1,17 +1,24 @@
 'use client';
-import { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Search, Bell, Upload, Menu, X, Zap, Trophy, ShoppingBag, Compass, Settings, Link2, LogOut, ChevronDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
+import { Link, usePathname, useRouter } from '@/i18n/routing';
+import { Search, Bell, Upload, Menu, X, Zap, Trophy, ShoppingBag, Compass, Settings, Link2, LogOut, ChevronDown, Globe } from 'lucide-react';
 
 const NAV_LINKS = [
-  { href: '/explore', label: 'Explore', icon: Compass },
-  { href: '/leaderboard', label: 'Leaderboard', icon: Trophy },
-  { href: '/marketplace', label: 'Marketplace', icon: ShoppingBag },
+  { href: '/explore', key: 'explore', icon: Compass },
+  { href: '/leaderboard', key: 'leaderboard', icon: Trophy },
+  { href: '/marketplace', key: 'marketplace', icon: ShoppingBag },
 ];
 
 export default function Navbar() {
+  const t = useTranslations('Navbar');
   const pathname = usePathname();
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState('en');
+  
+  useEffect(() => {
+    setCurrentLang(document.documentElement.lang || 'en');
+  }, []);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
@@ -52,7 +59,7 @@ export default function Navbar() {
           />
           <input
             type="text"
-            placeholder="Search AI-generated projects, prompts, tools..."
+            placeholder={t('search_placeholder')}
             onFocus={() => setSearchFocused(true)}
             onBlur={() => setSearchFocused(false)}
             className="input-field pl-10 py-2 text-sm"
@@ -62,7 +69,7 @@ export default function Navbar() {
 
         {/* Nav links */}
         <nav className="hidden lg:flex items-center gap-4">
-          {NAV_LINKS.map(({ href, label, icon: Icon }) => {
+          {NAV_LINKS.map(({ href, key, icon: Icon }) => {
             const active = pathname === href;
             return (
               <Link
@@ -75,7 +82,7 @@ export default function Navbar() {
                 }`}
               >
                 <Icon size={14} />
-                {label}
+                {t(key as 'explore' | 'leaderboard' | 'marketplace')}
               </Link>
             );
           })}
@@ -83,6 +90,20 @@ export default function Navbar() {
 
         {/* Right actions */}
         <div className="flex items-center gap-4 ml-auto lg:ml-0">
+          {/* Language Toggle */}
+          <button
+            onClick={() => {
+              const nextLocale = currentLang === 'en' ? 'zh' : 'en';
+              router.replace(pathname, {locale: nextLocale});
+            }}
+            className="hidden md:flex items-center gap-1.5 p-2 rounded-lg transition-colors hover:bg-white/5"
+            style={{ color: 'var(--text-secondary)' }}
+            aria-label="Language Toggle"
+          >
+            <Globe size={16} />
+            <span className="text-xs font-bold uppercase">{currentLang}</span>
+          </button>
+
           <button
             className="relative p-2 rounded-lg transition-colors hidden md:flex"
             style={{ background: 'rgba(255,255,255,0.05)', color: 'var(--text-secondary)' }}
@@ -97,7 +118,7 @@ export default function Navbar() {
 
           <Link href="/submit" className="btn-primary hidden md:flex items-center gap-1.5 text-sm py-2 px-4">
             <Upload size={14} />
-            Submit
+            {t('submit')}
           </Link>
 
           {/* Profile dropdown */}
@@ -182,7 +203,7 @@ export default function Navbar() {
               style={{ borderRadius: '100px', fontSize: '13px', height: '36px' }}
             />
           </div>
-          {NAV_LINKS.map(({ href, label, icon: Icon }) => (
+          {NAV_LINKS.map(({ href, key, icon: Icon }) => (
             <Link
               key={href}
               href={href}
@@ -191,7 +212,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
             >
               <Icon size={15} />
-              {label}
+              {t(key as 'explore' | 'leaderboard' | 'marketplace')}
             </Link>
           ))}
           <Link href="/submit" className="btn-primary flex items-center justify-center gap-2 mt-3" onClick={() => setMobileOpen(false)}>
