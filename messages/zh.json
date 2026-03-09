@@ -3,6 +3,7 @@
     "explore": "发现",
     "leaderboard": "排行榜",
     "marketplace": "创意集市",
+    "guide": "使用手册",
     "submit": "发布",
     "search_placeholder": "搜索 AI 生成项目、提示词、工具..."
   },
@@ -11,5 +12,18 @@
     "hero_desc": "分享、发现并出售 100% 由 AI 构建的项目。每一行代码都源于提示词的驱动，告别人工编码。纯粹的 Vibe。",
     "explore_btn": "探索项目",
     "submit_btn": "发布你的 Vibe"
+  },
+  "Guide": {
+    "title": "欢迎来到 VibeHub",
+    "subtitle": "这是供全球创作者交流的首选 AI 生成项目社区完整使用手册。",
+    "section1_title": "1. 探索项目与创意 (Explore)",
+    "section1_desc": "浏览数千个零人工编码的纯 AI 构建应用。您可以根据最初使用的 AI 工具（如 Cursor、v0.dev 等）进行筛选，或查看由我们自动化 AI 鉴赏员打出的项目质量分 (AI Score)。",
+    "section2_title": "2. 发布您的杰作 (Submit)",
+    "section2_desc": "做出了出色的 AI 项目？前往「发布」页面，连接你的代码仓库和在线 Demo，描述您的提示词链路（Prompt Chain）。我们的 AI 评审系统将即刻自动拉取代码、分析代码层级并对其进行打分与排名。",
+    "section3_title": "3. 创意集市 (Marketplace)",
+    "section3_desc": "手中握有能一次性生成完美后台数据面板的提示词指令序列？您可以直接在我们的集市上向其他创作者出售您的优质提示词模板、知识串或 AI 开发套件。",
+    "section4_title": "4. 排行榜与账号体系 (Leaderboard)",
+    "section4_desc": "前往“账户设置”，一键安全连接您的 GitHub 或 Hugging Face 账号以丰富创作者主页。通过社区点赞（Star）和高质量的代码机器评分考核，在每周总榜单中逐步晋升您的全球影响力。",
+    "ready_btn": "我了解了，开始探索！"
   }
 }

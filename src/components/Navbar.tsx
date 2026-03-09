@@ -2,13 +2,14 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
-import { Show, SignInButton, UserButton } from '@clerk/nextjs';
-import { Search, Bell, Upload, Menu, X, Zap, Trophy, ShoppingBag, Compass, Settings, Link2, LogOut, ChevronDown, Globe } from 'lucide-react';
+import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs';
+import { Search, Bell, Upload, Menu, X, Zap, Trophy, ShoppingBag, Compass, Settings, Link2, LogOut, ChevronDown, Globe, BookOpen } from 'lucide-react';
 
 const NAV_LINKS = [
   { href: '/explore', key: 'explore', icon: Compass },
   { href: '/leaderboard', key: 'leaderboard', icon: Trophy },
   { href: '/marketplace', key: 'marketplace', icon: ShoppingBag },
+  { href: '/guide', key: 'guide', icon: BookOpen },
 ];
 
 export default function Navbar() {
@@ -83,7 +84,7 @@ export default function Navbar() {
                 }`}
               >
                 <Icon size={14} />
-                {t(key as 'explore' | 'leaderboard' | 'marketplace')}
+                {t(key as 'explore' | 'leaderboard' | 'marketplace' | 'guide')}
               </Link>
             );
           })}
@@ -134,11 +135,18 @@ export default function Navbar() {
               />
             </Show>
             <Show when="signed-out">
-              <SignInButton mode="modal">
-                <button className="btn-secondary text-sm py-2 px-4 shadow-[0_0_15px_rgba(139,92,246,0.2)] hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all transition-shadow">
-                  Sign In
-                </button>
-              </SignInButton>
+              <div className="flex items-center gap-3">
+                <SignInButton mode="modal">
+                  <button className="text-sm font-medium hover:text-white transition-colors" style={{ color: 'var(--text-secondary)' }}>
+                    Sign In
+                  </button>
+                </SignInButton>
+                <SignUpButton mode="modal">
+                  <button className="btn-secondary text-sm py-2 px-4 shadow-[0_0_15px_rgba(139,92,246,0.2)] hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all transition-shadow">
+                    Sign Up
+                  </button>
+                </SignUpButton>
+              </div>
             </Show>
           </div>
 
@@ -178,7 +186,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
             >
               <Icon size={15} />
-              {t(key as 'explore' | 'leaderboard' | 'marketplace')}
+              {t(key as 'explore' | 'leaderboard' | 'marketplace' | 'guide')}
             </Link>
           ))}
           <Link href="/submit" className="btn-primary flex items-center justify-center gap-2 mt-3" onClick={() => setMobileOpen(false)}>

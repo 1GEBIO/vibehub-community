@@ -3,6 +3,7 @@
     "explore": "Explore",
     "leaderboard": "Leaderboard",
     "marketplace": "Marketplace",
+    "guide": "Handbook",
     "submit": "Submit",
     "search_placeholder": "Search AI-generated projects, prompts, tools..."
   },
@@ -11,5 +12,18 @@
     "hero_desc": "Share, discover, and sell projects built 100% by AI. Every line of code generated from a prompt. No manual coding. Pure vibe.",
     "explore_btn": "Explore Projects",
     "submit_btn": "Submit Your Vibe"
+  },
+  "Guide": {
+    "title": "Welcome to VibeHub",
+    "subtitle": "Your complete manual for the AI-generated project community.",
+    "section1_title": "1. Exploring Projects & Vibe",
+    "section1_desc": "Discover thousands of apps built with zero manual coding. Filter by the AI tools used (like Cursor or v0.dev), categories, and check the 'AI Score' assigned by our automated curator.",
+    "section2_title": "2. Submitting Your Work",
+    "section2_desc": "Got a killer project made with AI? Head to 'Submit', link your repository or demo, describe your prompt chain, and let our AI Curator analyze your code instantly to rank it.",
+    "section3_title": "3. The Marketplace (Beta)",
+    "section3_desc": "Have a prompt sequence that generates perfect landing pages? Sell your templates, prompt chains, or AI-agents directly to other creators.",
+    "section4_title": "4. Leaderboard & Connections",
+    "section4_desc": "Connect your GitHub or Hugging Face accounts to build your creator profile. Rank up on the weekly leaderboard by gaining stars and AI score boosts.",
+    "ready_btn": "Got it, let's explore!"
   }
 }
