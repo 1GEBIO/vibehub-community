@@ -304,6 +304,14 @@ body {
   width: 100%;
 }
 
+.input-field.pl-10 {
+  padding-left: 40px !important;
+}
+
+.input-field.pl-11 {
+  padding-left: 44px !important;
+}
+
 .input-field:focus {
   border-color: rgba(139, 92, 246, 0.5);
   box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
