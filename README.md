@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚡ VibeHub
 
-## Getting Started
+### The Creative Marketplace for 100% AI-Generated Projects
 
-First, run the development server:
+![VibeHub Hero](./public/assets/marketing/hero.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌟 Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**VibeHub** is a premier community and marketplace built exclusively for **Vibe Coding** enthusiasts and AI-driven developers. We believe in a future where code is not just written, but *prompted and orchestrated*. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Unlike traditional code repositories, VibeHub focuses on the **end-to-end AI generation process**, providing a stage for projects that are born entirely from AI tools like Cursor, v0, Claude, and GitHub Copilot.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Key Features
 
-To learn more about Next.js, take a look at the following resources:
+- 🤖 **Pure AI Validation**: We only accept projects generated through AI-human collaboration (Vibe Coding).
+- 🧠 **AI Curation System**: Automated classification and feedback for every project using advanced LLMs.
+- 💎 **Vibe Marketplace**: A hub to share, fork, and trade AI generation templates and prompts.
+- 🏆 **Dynamic Leaderboard**: Real-time rankings based on project popularity, code quality, and "Vibe" scores.
+- 🔗 **Identity Integration**: Seamless developer profile linking with GitHub and Hugging Face.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Vision
 
-## Deploy on Vercel
+From "Vibe Coding" to fully autonomous AI agents, VibeHub is the town square for the next generation of builders who are redefining the boundaries of software development.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Social Banner](./public/assets/marketing/banner.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠 Built With
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Styling**: Vanilla CSS with a focus on modern "Vibe" aesthetics (Glassmorphism, Neon Gradients)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Infrastructure**: [Netlify](https://www.netlify.com/)
+
+## 🌈 Join the Movement
+
+Visit the live community: **[VibeHub Live](https://1gebio-vibehub.netlify.app)** *(Update with your actual URL)*
+
+---
+
+### Developed by AI, for the AI Generation. 🤖✨
+
+![Mascot](./public/assets/marketing/mascot.png)
