@@ -52,7 +52,7 @@ export default function HomePage() {
       <div className="grid-bg absolute inset-0 pointer-events-none" />
 
       {/* ─── HERO ─────────────────────────────────── */}
-      <section className="relative max-w-7xl mx-auto px-6 pt-24 pb-20 text-center">
+      <section className="relative max-w-[1600px] mx-auto px-8 pt-32 pb-32 text-center">
         {/* Announcement pill */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 neon-border text-sm"
           style={{ background: 'rgba(139,92,246,0.08)', color: '#c4b5fd' }}>
@@ -95,7 +95,7 @@ export default function HomePage() {
         </div>
 
         {/* Live Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {[
             { label: 'Projects', value: STATS.totalProjects.toLocaleString(), color: 'from-violet-600 to-pink-600', icon: '🚀' },
             { label: 'Builders', value: STATS.totalUsers.toLocaleString(), color: 'from-cyan-600 to-blue-600', icon: '👾' },
@@ -115,7 +115,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── CATEGORIES ───────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-6 mb-20">
+      <section className="max-w-[1600px] mx-auto px-8 mb-32">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold section-title">Browse by Vibe</h2>
           <Link href="/explore" className="text-sm text-purple-400 hover:text-purple-300 flex items-center gap-1">
@@ -141,7 +141,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── FEATURED PROJECTS ────────────────────── */}
-      <section className="max-w-7xl mx-auto px-6 mb-20">
+      <section className="max-w-[1600px] mx-auto px-8 mb-32">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-xl font-bold section-title flex items-center gap-2">
@@ -154,13 +154,13 @@ export default function HomePage() {
             View all <ChevronRight size={14} />
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featured.map(p => <ProjectCard key={p.id} project={p} />)}
         </div>
       </section>
 
       {/* ─── TRENDING ─────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-6 mb-20">
+      <section className="max-w-[1600px] mx-auto px-8 mb-32">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold section-title flex items-center gap-2">
             <TrendingUp size={18} className="text-pink-400" />
@@ -170,13 +170,13 @@ export default function HomePage() {
             Full leaderboard <ChevronRight size={14} />
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {trending.map((p, i) => <ProjectCard key={p.id} project={p} rank={i + 1} />)}
         </div>
       </section>
 
       {/* ─── AI CURATION EXPLAINER ────────────────── */}
-      <section className="max-w-7xl mx-auto px-6 mb-20">
+      <section className="max-w-[1600px] mx-auto px-8 mb-32">
         <div className="glass-card p-8 md:p-12 relative overflow-hidden">
           <div className="orb" style={{ width: '300px', height: '300px', background: 'radial-gradient(circle, #8b5cf6, transparent)', top: '-100px', right: '-100px', opacity: 0.2 }} />
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -230,14 +230,14 @@ export default function HomePage() {
       </section>
 
       {/* ─── TOP CREATORS ─────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-6 mb-20">
+      <section className="max-w-[1600px] mx-auto px-8 mb-32">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold section-title flex items-center gap-2">
             <Star size={18} className="text-yellow-400" />
             Top Creators
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {USERS.map((user, i) => (
             <Link key={user.id} href={`/profile/${user.username}`}>
               <div className="glass-card p-5 flex items-center gap-4 cursor-pointer">
@@ -274,7 +274,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── CTA ──────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-6 mb-20">
+      <section className="max-w-[1600px] mx-auto px-8 mb-32">
         <div
           className="rounded-2xl p-12 text-center relative overflow-hidden"
           style={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.15), rgba(236,72,153,0.15))', border: '1px solid rgba(139,92,246,0.2)' }}

@@ -26,7 +26,7 @@ export default function Navbar() {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center gap-4">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-8 h-20 flex items-center gap-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0 group">
           <div
@@ -61,7 +61,7 @@ export default function Navbar() {
         </div>
 
         {/* Nav links */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-4">
           {NAV_LINKS.map(({ href, label, icon: Icon }) => {
             const active = pathname === href;
             return (
@@ -82,7 +82,7 @@ export default function Navbar() {
         </nav>
 
         {/* Right actions */}
-        <div className="flex items-center gap-2 ml-auto md:ml-0">
+        <div className="flex items-center gap-4 ml-auto lg:ml-0">
           <button
             className="relative p-2 rounded-lg transition-colors hidden md:flex"
             style={{ background: 'rgba(255,255,255,0.05)', color: 'var(--text-secondary)' }}
@@ -103,16 +103,16 @@ export default function Navbar() {
           {/* Profile dropdown */}
           <div className="relative hidden md:block" onMouseLeave={() => setProfileOpen(false)}>
             <button
-              className="flex items-center gap-1.5 rounded-xl px-1.5 py-1 transition-colors hover:bg-white/5"
+              className="flex items-center gap-2 rounded-xl px-2 py-1.5 transition-colors hover:bg-white/5"
               onClick={() => setProfileOpen(o => !o)}
               aria-label="Account menu"
             >
               <img
                 src="https://api.dicebear.com/7.x/avataaars/svg?seed=alice&backgroundColor=b6e3f4"
                 alt="Profile"
-                className="avatar w-8 h-8"
+                className="avatar w-9 h-9"
               />
-              <ChevronDown size={12} style={{ color: 'var(--text-secondary)', transform: profileOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
+              <ChevronDown size={14} style={{ color: 'var(--text-secondary)', transform: profileOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
             </button>
             {profileOpen && (
               <div
