@@ -299,7 +299,7 @@ export default function ConnectionsPage() {
   );
 
   return (
-    <div className="max-w-5xl mx-auto px-4 md:px-6 py-10">
+    <div className="max-w-5xl mx-auto px-6 sm:px-12 lg:px-24 py-10">
       {/* ── Breadcrumb ── */}
       <div className="flex items-center gap-2 text-sm mb-6" style={{ color: 'var(--text-secondary)' }}>
         <Link href="/profile/vibe_alice" className="hover:text-purple-400 transition-colors">Profile</Link>

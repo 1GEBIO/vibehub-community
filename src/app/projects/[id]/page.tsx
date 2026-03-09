@@ -58,7 +58,7 @@ export default function ProjectDetail({ params }: Props) {
   const scorePercent = project.aiScore;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-6 py-10">
+    <div className="max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-24 xl:px-40 py-10">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm mb-6" style={{ color: 'var(--text-secondary)' }}>
         <Link href="/explore" className="hover:text-purple-400 transition-colors">Explore</Link>

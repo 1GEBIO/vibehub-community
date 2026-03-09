@@ -27,7 +27,7 @@ export default function ProfilePage({ params }: Props) {
   const connectedAccounts = username === 'vibe_alice' ? MOCK_CONNECTED_ACCOUNTS : [];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-6 py-10">
+    <div className="max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-24 xl:px-40 py-10">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* ── LEFT: Profile card ── */}
         <div className="lg:col-span-1 space-y-5">

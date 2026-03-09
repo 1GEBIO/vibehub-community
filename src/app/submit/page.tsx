@@ -148,7 +148,7 @@ export default function SubmitPage() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 md:px-6 py-10">
+    <div className="max-w-3xl mx-auto px-6 sm:px-12 py-10">
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 mb-2">

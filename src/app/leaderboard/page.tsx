@@ -35,7 +35,7 @@ export default function LeaderboardPage() {
   const sortedUsers = [...USERS].sort((a, b) => b.aiScore - a.aiScore);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-6 py-10">
+    <div className="max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-24 xl:px-40 py-10">
       {/* Header */}
       <div className="text-center mb-10">
         <div className="inline-flex items-center gap-2 mb-4">
